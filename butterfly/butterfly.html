@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蝴蝶</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #huide{
+            position: absolute;//让图片浮动
+            left: 0;
+            top: 0;
+            display: none;//隐藏蝴蝶
+        }
+    </style>
+    <script>
+        function  showTip() {
+            var huide=document.getElementById("huide");//获取鼠标位置
+            var event=window.event;
+            var left=event.clientX+10+"px";
+            var top=event.clientY+10+"px";
+            huide.style.left=left;
+            huide.style.top=top;
+            huide.style.display="block";
+
+        }
+        function hideTip() {
+            var huide=document.getElementById("huide");
+            huide.style.display="none";
+        }
+    </script>
+</head>
+<body>
+    <img src="images/background.jpg" height="100%" width="100%" onmousemove="showTip()" onmouseover="showTip()" onmouseout="hideTip()"/>
+    <img id="huide" src="images/蝴蝶.gif"/>
+</body>
+</html>
