@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>剑灵导航</title>
+    <style>
+        body{
+            margin:0;/*外边距为0*/
+        }
+        ul{
+            margin:0;
+            padding: 0;
+            list-style: none;/*去除默认小圆点*/
+        }
+        .nav-wrap{
+            width:1000px;
+            height:500px;
+            background-color: black;
+            margin:100px auto 0;/*上 左右 下*/
+        }
+        .nav-wrap ul{
+            height:100%;
+            display: flex;/*开启弹性盒模型,列表之间间距*/
+            justify-content: space-around;/*两端对齐*/
+            align-items: center;
+        }
+        .nav-wrap ul li{
+            position: relative;/*相对定位 给子元素作为参照物*/
+            width:118px;
+            height:380px;
+            background-image:url(images/sp.png);
+            /*float:left;*/
+        }
+        .nav-wrap ul li a{
+            position: absolute;/*定位，改变标签的位置 top left right bottom*/
+            top:-20px;
+            display: block;/*转换为块元素*/
+            width:118px;
+            height:380px;
+            animation: move1 1s  linear infinite alternate;/*动画名字 时间 循环播放 反向播放*/
+        }
+        .li1{
+            background-position: 0 790px;
+        }
+        .li2{
+            background-position: -148px 790px;
+        }
+        .li3{
+            background-position: -296px 790px;
+        }
+        .li4{
+            background-position: -444px 790px;
+        }
+        .li5{
+            background-position: -592px 790px;
+         }
+        .li6{
+            background-position: -740px 790px;
+        }
+
+        .nav-wrap ul li:nth-child(2n-1){/*奇数*/
+            animation: move1 1s  linear infinite alternate;
+        }
+        .nav-wrap ul li:nth-child(2n){/*偶数*/
+            animation: move1 1s -1s  linear infinite alternate;
+        }
+        @keyframes move1 {/*关键动画帧，动画的名字*/
+            from{/*动画开始的时候*/
+                top:0;
+            }
+            to{/*动画结束的时候*/
+                top:-20px;
+            }
+        }
+       /* @keyframes move2 {!*关键动画帧，动画的名字*!
+            from{!*动画开始的时候*!
+                top:-20px;
+            }
+            to{!*动画结束的时候*!
+                top:0;
+            }
+        }*/
+    </style>
+
+</head>
+<body>
+    <div class="nav-wrap">
+        <ul>
+            <li class="li1">
+                <a href="" class="pic"></a>
+            </li>
+            <li class="li2">
+                <a href="" class="pic"></a>
+            </li>
+            <li class="li3">
+                <a href="" class="pic"></a>
+            </li>
+            <li class="li4">
+                <a href="" class="pic"></a>
+            </li>
+            <li class="li5">
+                <a href="" class="pic"></a>
+            </li>
+            <li class="li6">
+                <a href="" class="pic"></a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
